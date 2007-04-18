@@ -5,15 +5,15 @@
 
 Summary:	Memcached extension for php
 Name:		php-%{modname}
-Version:	2.1.0
-Release:	%mkrel 3
+Version:	2.1.2
+Release:	%mkrel 1
 Group:		Development/PHP
 License:	PHP License
 URL:		http://pecl.php.net/package/memcache
 Source0:	http://pecl.php.net/get/%{modname}-%{version}.tar.bz2
 Source1:	%{modname}.ini
 Requires:	memcached
-BuildRequires:	php-devel >= 3:5.2.0
+BuildRequires:	php-devel >= 3:5.2.1
 BuildRequires:	zlib-devel
 BuildRequires:	dos2unix
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
@@ -35,6 +35,8 @@ find . -type f -exec chmod 644 {} \;
 
 # strip away annoying ^M
 find -type f | grep -v ".gif" | grep -v ".png" | grep -v ".jpg" | xargs dos2unix -U
+
+ln -s %{_usrsrc}/php-devel/extensions ext
 
 %build
 
@@ -63,5 +65,3 @@ install -m0644 %{inifile} %{buildroot}%{_sysconfdir}/php.d/%{inifile}
 %doc CREDITS README example.php package.xml
 %config(noreplace) %attr(0644,root,root) %{_sysconfdir}/php.d/%{inifile}
 %attr(0755,root,root) %{_libdir}/php/extensions/%{soname}
-
-
