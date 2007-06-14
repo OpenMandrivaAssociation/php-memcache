@@ -6,7 +6,7 @@
 Summary:	Memcached extension for php
 Name:		php-%{modname}
 Version:	2.1.2
-Release:	%mkrel 3
+Release:	%mkrel 4
 Group:		Development/PHP
 License:	PHP License
 URL:		http://pecl.php.net/package/memcache
@@ -39,6 +39,15 @@ find -type f | grep -v ".gif" | grep -v ".png" | grep -v ".jpg" | xargs dos2unix
 ln -s %{_usrsrc}/php-devel/extensions ext
 
 %build
+export CFLAGS="%{optflags}"
+export CXXFLAGS="%{optflags}"
+export FFLAGS="%{optflags}"
+
+%if %mdkversion >= 200710
+export CFLAGS="$CFLAGS -fstack-protector"
+export CXXFLAGS="$CXXFLAGS -fstack-protector"
+export FFLAGS="$FFLAGS -fstack-protector"
+%endif
 
 phpize
 %configure2_5x --with-libdir=%{_lib} \
