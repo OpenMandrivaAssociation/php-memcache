@@ -5,12 +5,12 @@
 
 Summary:	Memcached extension for php
 Name:		php-%{modname}
-Version:	2.1.2
-Release:	%mkrel 5
+Version:	2.2.0
+Release:	%mkrel 1
 Group:		Development/PHP
 License:	PHP License
 URL:		http://pecl.php.net/package/memcache
-Source0:	http://pecl.php.net/get/%{modname}-%{version}.tar.bz2
+Source0:	http://pecl.php.net/get/%{modname}-%{version}.tgz
 Source1:	%{modname}.ini
 Requires:	memcached
 BuildRequires:	php-devel >= 3:5.2.1
