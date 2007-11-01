@@ -5,7 +5,7 @@
 
 Summary:	Memcached extension for php
 Name:		php-%{modname}
-Version:	2.2.0
+Version:	2.2.1
 Release:	%mkrel 1
 Group:		Development/PHP
 License:	PHP License
