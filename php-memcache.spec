@@ -16,6 +16,7 @@ Requires:	memcached
 BuildRequires:	php-devel >= 3:5.2.1
 BuildRequires:	zlib-devel
 BuildRequires:	dos2unix
+BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 Memcached is a caching daemon designed especially for dynamic web applications
