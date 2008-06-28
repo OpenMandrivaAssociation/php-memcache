@@ -6,7 +6,7 @@
 Summary:	Memcached extension for php
 Name:		php-%{modname}
 Version:	3.0.1
-Release:	%mkrel 2
+Release:	%mkrel 3
 Group:		Development/PHP
 License:	PHP License
 URL:		http://pecl.php.net/package/memcache
@@ -50,7 +50,7 @@ phpize
 mv modules/*.so .
 
 %install
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
+rm -rf %{buildroot}
 
 install -d %{buildroot}%{_libdir}/php/extensions
 install -d %{buildroot}%{_sysconfdir}/php.d
@@ -71,7 +71,7 @@ if [ "$1" = "0" ]; then
 fi
 
 %clean
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
+rm -rf %{buildroot}
 
 %files 
 %defattr(-,root,root)
