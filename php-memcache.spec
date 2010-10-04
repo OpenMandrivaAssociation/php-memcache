@@ -5,8 +5,8 @@
 
 Summary:	Memcached extension for php
 Name:		php-%{modname}
-Version:	3.0.4
-Release:	%mkrel 9
+Version:	3.0.5
+Release:	%mkrel 1
 Group:		Development/PHP
 License:	PHP License
 URL:		http://pecl.php.net/package/memcache
