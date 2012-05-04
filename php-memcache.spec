@@ -12,6 +12,7 @@ License:	PHP License
 URL:		http://pecl.php.net/package/memcache
 Source0:	http://pecl.php.net/get/%{modname}-%{version}.tgz
 Source1:	%{modname}.ini
+Patch0:		memcache-3.0.6-php54x.diff
 Requires:	memcached
 BuildRequires:	php-devel >= 3:5.2.1
 BuildRequires:	zlib-devel
@@ -27,6 +28,8 @@ you to work with memcached through handy OO and procedural interfaces.
 
 %setup -q -n %{modname}-%{version}
 [ "../package.xml" != "/" ] && mv ../package.xml .
+
+%patch0 -p1
 
 cp %{SOURCE1} %{inifile}
 
