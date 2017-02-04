@@ -3,16 +3,17 @@
 %define soname %{modname}.so
 %define inifile A43_%{modname}.ini
 
+%define snapshot 4991c2f
+%define snapshot_full 4991c2fff22d00dc81014cc92d2da7077ef4bc86
 Summary:	Memcached extension for php
 Name:		php-%{modname}
-Version:	3.0.6
-Release:	8
+Version:	3.0.9
+Release:	0.1
 Group:		Development/PHP
 License:	PHP License
 URL:		http://pecl.php.net/package/memcache
-Source0:	http://pecl.php.net/get/%{modname}-%{version}.tgz
+Source0:	http://pecl.php.net/get/%{modname}-%{version}-%{snapshot}.tar.gz
 Source1:	%{modname}.ini
-Patch0:		memcache-3.0.6-php54x.diff
 Requires:	memcached
 BuildRequires:	php-devel >= 3:5.2.1
 BuildRequires:	zlib-devel
@@ -26,10 +27,7 @@ you to work with memcached through handy OO and procedural interfaces.
 
 %prep
 
-%setup -q -n %{modname}-%{version}
-[ "../package.xml" != "/" ] && mv ../package.xml .
-
-%patch0 -p1
+%setup -q -n pecl-%{modname}-%{snapshot_full}
 
 cp %{SOURCE1} %{inifile}
 
