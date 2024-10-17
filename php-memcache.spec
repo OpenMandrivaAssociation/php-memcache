@@ -11,7 +11,7 @@ Version:	3.0.9
 Release:	0.2
 Group:		Development/PHP
 License:	PHP License
-URL:		http://pecl.php.net/package/memcache
+URL:		https://pecl.php.net/package/memcache
 Source0:	http://pecl.php.net/get/%{modname}-%{version}-%{snapshot}.tar.gz
 Source1:	%{modname}.ini
 Requires:	memcached
