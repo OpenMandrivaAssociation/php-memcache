@@ -15,6 +15,11 @@ URL:		https://pecl.php.net/package/memcache
 Source0:	http://pecl.php.net/get/%{modname}-%{version}-%{snapshot}.tar.gz
 Source1:	%{modname}.ini
 Requires:	memcached
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	php-devel >= 3:5.2.1
 BuildRequires:	zlib-devel
 BuildRequires:	dos2unix
